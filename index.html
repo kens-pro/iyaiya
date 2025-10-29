@@ -15,18 +15,36 @@
     }
     html,body { margin:0; padding:0; background:var(--bg); color:var(--fg); font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", "YuGothic", "Helvetica Neue", Arial, sans-serif; line-height:1.85; }
     .container { max-width: 880px; margin: 0 auto; padding: 32px 20px; }
-    header { margin-bottom: 28px; text-align: center; }
-    header img { max-width: 100%; height: auto; border-radius: 10px; margin-bottom: 16px; }
+    header { margin-bottom: 28px; }
     header .brand { font-weight: 700; letter-spacing: .04em; color: var(--muted); font-size: 14px; }
     h1 { font-size: clamp(24px, 2.8vw, 34px); line-height:1.35; margin: 10px 0 8px; }
     .meta { color: var(--muted); font-size: 14px; }
     nav.breadcrumb { font-size: 14px; margin: 16px 0 8px; color: var(--muted); }
     nav.breadcrumb a { color: var(--muted); text-decoration: none; }
-    article img { max-width: 100%; height: auto; border-radius: 8px; margin: 16px 0; }
+    article { background: var(--bg); }
     h2 { font-size: clamp(18px,2.2vw,22px); margin: 32px 0 12px; border-left: 4px solid var(--accent); padding-left: 10px; }
+    h3 { font-size: 18px; margin: 24px 0 8px; }
     p { margin: 0 0 14px; }
+    ul { padding-left: 1.2em; }
+    li { margin: 6px 0; }
+    .callout { background: var(--card); padding: 14px 16px; border-left: 3px solid var(--accent); border-radius: 8px; }
     .divider { height:1px; background:#e5e7eb; margin: 28px 0; }
+    a { color: var(--accent); }
     footer { margin-top: 36px; color: var(--muted); font-size: 14px; }
+    .note { font-size: 14px; color: var(--muted); }
+    .toc { background: var(--card); padding: 12px 14px; border-radius: 10px; }
+    blockquote { border-left: 3px solid #e5e7eb; padding-left: 12px; color: #4b5563; margin: 12px 0; }
+    .links { display: grid; grid-template-columns: 1fr; gap: 10px; }
+    .linkcard { background: var(--card); padding: 12px 14px; border-radius: 10px; }
+    .linkcard a { text-decoration: none; font-weight: 600; }
+    .badge { display:inline-block; padding:2px 8px; border:1px solid #e5e7eb; border-radius:999px; font-size:12px; color:#374151; background:#fff; }
+  article img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 16px auto;
+  border-radius: 8px;
+}
   </style>
 </head>
 <body>
@@ -36,34 +54,97 @@
       <div class="brand">やめないピアノ・エレクトーン楽しい家庭練習メルマガ</div>
       <h1>“イヤ！”は、ママを信じてるサイン</h1>
       <div class="meta">第1121号｜2025年11月1日（土）｜発行：Ken</div>
+      <nav class="breadcrumb"><a href="https://yamepi.club/" rel="noopener">バックナンバー</a> / 本文</nav>
     </header>
+
+    <section class="callout">
+      <strong>はじめての方へ</strong><br>
+      このメルマガは、指導者の上から目線ではなく、親の視点で「家庭練習を楽しくする工夫」をまとめています。先輩ママから学んだ成功ノウハウと、私（Ken）の失敗談も交えてお届けします。
+    </section>
+
+    <div class="divider"></div>
 
     <article>
       <img src="/image/22810337_s.jpg" alt="ママと子どもがリズムを合わせて手をたたくイメージ（仮）" />
       <p>毎日の子育て、本当におつかれさまです。<br>
       「うちの子、なんでもイヤ！」「どうしたらいいのか分からない…」——そんな声をよく耳にします。</p>
       <p>つい叱りたくなったり、気づいたらため息が出たり。でも実は、“イヤイヤ期”は、子どもが<strong>ママを信じているからこそ</strong>起きる現象なんです。</p>
+      <p>今回は、音楽教育の現場から見えてきた「<strong>セイム</strong>と<strong>ノンセイム</strong>」という考え方で、イヤイヤ期を“成長のサイン”として見つめ直してみます。</p>
 
-      <h2>イヤイヤ期は、セイムからノンセイムへの変化の時間</h2>
+      <div class="toc">
+        <span class="badge">目次</span>
+        <ul>
+          <li><a href="#section-1">イヤイヤ期は、セイムからノンセイムへの変化の時間</a></li>
+          <li><a href="#section-2">“イヤ”は、不安と興味のあいだにある</a></li>
+          <li><a href="#section-3">セイムを上手に使うと、イヤイヤは整う</a></li>
+          <li><a href="#section-4">理解が、安心と自信に変わる</a></li>
+        </ul>
+      </div>
+
+      <h2 id="section-1">イヤイヤ期は、セイムからノンセイムへの変化の時間</h2>
       <img src="/image/AdobeStock_296127493.jpeg" alt="セイムとノンセイムの概念イメージ図（仮）" />
       <p>赤ちゃんのころ、子どもにとって世界は“ママ”そのものでした。ママの声、抱っこ、笑顔、体温——それが「安心」のすべて。</p>
       <blockquote>『いっしょだと安心…』私はこの状態を「<strong>セイム（Same）</strong>」と呼んでいます。心理学でいう安全基地や同調に近い考え方ですが、より直感的に<strong>「心のリズムがピッタリ合っている状態」</strong>と捉えています。</blockquote>
+      <p>ところが、2歳に近づくと、子どもは少しずつ「ママと違うリズム」を感じ始めます。『いっしょじゃない…』——それは怖い。不安。でも、それは「<strong>ノンセイム（Non‑Same）</strong>」への第一歩。例えば人見知り。いつもと違う場所・人・環境に慎重になるのは、心が世界を広げようとしている合図です。</p>
 
-      <h2>“イヤ”は、不安と興味のあいだにある</h2>
+      <h2 id="section-2">“イヤ”は、不安と興味のあいだにある</h2>
       <img src="/image/AdobeStock_458055199.jpeg" alt="不安と好奇心の間にいる子どもの表情（仮）" />
       <p>ママとの“いっしょ”をたっぷり感じてきた子どもほど、“ちがう”世界に出会っても、少しずつ「こわい」から「おもしろい」へと変わっていきます。これは、心の中で進む成長のプロセス。</p>
+      <p>とはいえ「違う」を試すのは、ワクワクと同時に不安も伴います。だから子どもは、安心を確かめるように“イヤ！”と言います。これは「ママを拒否」ではなく、<strong>「ママを信じているから試せる」</strong>というサインです。</p>
+      <p>つまり“イヤイヤ期”は、<strong>安心（セイム）を土台にした挑戦（ノンセイム）</strong>。心のリズムを少しずつ“自分のテンポ”に変えていく時期なのです。</p>
 
-      <h2>セイムを上手に使うと、イヤイヤは整う</h2>
+      <h2 id="section-3">セイムを上手に使うと、イヤイヤは整う</h2>
       <img src="/image/28505784_l.jpg" alt="ハイタッチする親子の写真（仮）" />
-      <p>イヤイヤに疲れたときは、まず“セイム”のリズムを取り戻しましょう。目線を合わせて手をたたいたり、息を合わせて深呼吸したり、ハイタッチして笑い合ったりするだけで、親子の心拍が同調します。</p>
+      <p>イヤイヤに疲れたときは、まず“セイム”のリズムを取り戻しましょう。次の3つが即効性のあるコツです。</p>
+      <ul>
+        <li><strong>目線を合わせて、いっしょに手をたたく</strong></li>
+        <li><strong>息を合わせて「ふーっ」と深呼吸</strong></li>
+        <li><strong>パチンとハイタッチして笑い合う</strong></li>
+      </ul>
+      <p>この瞬間、ママと子どもの呼吸と心拍が同調します。音楽でいえば“テンポが戻る”状態。不安が少しずつ落ち着き、また「違い」を楽しむ余裕が戻ってきます。</p>
 
-      <h2>理解が、安心と自信に変わる</h2>
+      <h2 id="section-4">理解が、安心と自信に変わる</h2>
       <img src="/image/AdobeStock_486504895.jpeg" alt="安心した表情の母親（仮）" />
-      <p>「イヤイヤ期」は、ママを困らせる時期ではなく、<strong>ママを信じて自分を探す時間</strong>。その仕組みを理解できると、ママの心も不思議と落ち着きます。</p>
-
+      <p>「イヤイヤ期」は、ママを困らせる時期ではなく、<strong>ママを信じて自分を探す時間</strong>。この仕組みを理解できると、ママの心も不思議と落ち着きます。</p>
       <p><strong>「大丈夫。この子はちゃんと育ってる」</strong>——そう思えた瞬間、ママ自身のテンポも整います。これが、親子の“セイム”。</p>
 
       <img src="/image/AdobeStock_486506013.jpeg" alt="親子が音楽に合わせて微笑むイメージ（仮）" />
+
+      <div class="note">
+        ※「セイム」「ノンセイム」は、トリイミュージックで子どもの成長を音楽的に捉えるためのKen流の造語です。難しい心理学用語ではなく、“心のリズム”をやさしく説明するための言葉としてお読みください。
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>今週のおすすめサイト</h2>
+      <div class="links">
+        <div class="linkcard">
+          <a href="https://kotonoha.okinawa.jp/2021/09/04/%F0%9F%8C%B1%E4%BB%8A%E9%80%B1%E3%81%AEst%E5%8B%89%E5%BC%B7%E5%AE%A4%E2%9C%8F%EF%B8%8F-vol-3-%E3%83%A2%E3%83%B3%E3%83%86%E3%83%83%E3%82%BD%E3%83%BC%E3%83%AA%E6%95%99%E8%82%B2%E7%9A%84%E3%80%81/" rel="noopener">今週のST勉強室 Vol.3｜モンテッソーリ教育的、イヤイヤ期の対処法6ポイント</a>
+          <p class="note">事前アナウンスや楽しい予告など、すぐ試せる具体策がまとまっています。</p>
+        </div>
+        <div class="linkcard">
+          <a href="https://montessoriparents.jp/blog/tipsfor-dealingwith-thenophase/" rel="noopener">【モンテッソーリ子育て】イヤイヤ期への対応のコツ</a>
+          <p class="note">イヤイヤ期＝自立への変革期という視点。安全基地としての受け止め方がポイント。</p>
+        </div>
+        <div class="linkcard">
+          <a href="https://ameblo.jp/yuukiduke-ayumi/entry-12362577225.html" rel="noopener">アドラー心理学：あまのじゃく3歳長女に振り回されず心穏やかにいられるコツ</a>
+          <p class="note">親の感情を整えるヒントに。まずは自分の気持ちの観察から。</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h2>編集後記</h2>
+      <p>子どもの「イヤ！」は、ママの“失敗”でも“わがままの証拠”でもありません。むしろ、<strong>「ママと一緒だからこそ安心して“違い”を試している」</strong>という証です。</p>
+      <p>もし今日、イヤイヤに疲れたら、どうか深呼吸して、ハイタッチを。パチン、と合うその音が、親子の“セイム”を取り戻す合図になります。音楽のように、親子の心がまた一拍、そろいますように。🎶</p>
+
+      <div class="divider"></div>
+
+      <h3>Kenへのお便り・ご感想</h3>
+      <p>いつも「やめＰ」をお読みいただきありがとうございます。すべてのメールは拝読しています（本文でご紹介する場合があります）。お気軽にどうぞ。<br>
+      ✉️ <a href="mailto:kens-pro@mx.biwa.ne.jp">kens-pro@mx.biwa.ne.jp</a></p>
+
+      <p class="note">配信停止・バックナンバー：<a href="http://archive.mag2.com/0000122540/index.html" rel="noopener">まぐまぐ！配信停止ページ</a> ／ <a href="https://yamepi.club/" rel="noopener">やめＰブログ</a></p>
     </article>
 
     <footer>
